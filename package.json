@@ -7,13 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:push": "dotenv -e src/.env -- drizzle-kit push",
-    "db:seed": "dotenv -e src/.env -- tsx src/lib/seed.ts",
-    "db:studio": "dotenv -e src/.env -- drizzle-kit studio"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.1.0",
-    "drizzle-orm": "^0.45.2",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.294.0",
     "next": "16.2.6",
@@ -27,12 +22,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "dotenv-cli": "^11.0.0",
-    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "tsx": "^4.22.1",
     "typescript": "^5"
   }
 }
