@@ -77,7 +77,7 @@ export default function Header() {
               height={36}
               className="rounded-xl shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform"
             />
-            <span className="text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+            <span className="font-[family-name:var(--font-orbitron)] font-black tracking-wider text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
               ADITYA
             </span>
           </a>
