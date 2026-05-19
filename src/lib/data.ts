@@ -142,7 +142,7 @@ export const PROJECTS = [
       "AI-powered chatbot with real-time conversational capabilities and secure knowledge-restricted responses for customer support.",
     tech: ["Next.js", "Vercel AI SDK", "PostgreSQL", "Drizzle ORM", "OpenAI API"],
     github: SOCIALS.github,
-    live: "#",
+    live: "https://knowledge-ai-rag-chatbot.vercel.app/",
     image: "/images/projects/ChatBot.webp",
     gradient: "from-purple-600 to-indigo-600",
   },
