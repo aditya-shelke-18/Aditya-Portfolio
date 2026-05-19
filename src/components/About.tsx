@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import {
   User, Mail, Phone, MapPin,
   Code2, Database, Server, Award, Globe, Smartphone, GitBranch, Layers,
-  Github, Linkedin, Instagram, type LucideIcon,
+  Github, Linkedin, type LucideIcon,
 } from "lucide-react";
 import { PERSONAL, SOCIALS, SKILL_CATEGORIES } from "@/lib/data";
 
@@ -25,7 +25,6 @@ export default function About() {
     { icon: <MapPin size={18} />, label: "Location", value: PERSONAL.location, href: "https://maps.google.com/?q=Mumbai", color: "text-rose-600 dark:text-rose-400 bg-rose-500/10 dark:bg-rose-400/10 border-rose-500/20 dark:border-rose-400/20", hoverBg: "hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500" },
     { icon: <Github size={18} />, label: "GitHub", value: SOCIALS.github.replace("https://", ""), href: SOCIALS.github, color: "text-slate-700 dark:text-slate-200 bg-slate-500/10 dark:bg-white/10 border-slate-500/20 dark:border-white/10", hoverBg: "hover:bg-slate-800 hover:text-white dark:hover:bg-slate-700" },
     { icon: <Linkedin size={18} />, label: "LinkedIn", value: SOCIALS.linkedin.replace("https://", ""), href: SOCIALS.linkedin, color: "text-blue-600 dark:text-blue-400 bg-blue-500/10 dark:bg-blue-400/10 border-blue-500/20 dark:border-blue-400/20", hoverBg: "hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600" },
-    { icon: <Instagram size={18} />, label: "Instagram", value: SOCIALS.instagram.replace("https://", ""), href: SOCIALS.instagram, color: "text-pink-600 dark:text-pink-400 bg-pink-500/10 dark:bg-pink-400/10 border-pink-500/20 dark:border-pink-400/20", hoverBg: "hover:bg-pink-500 hover:text-white dark:hover:bg-pink-500" },
   ];
 
   return (
