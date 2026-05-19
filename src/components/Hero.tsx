@@ -100,16 +100,7 @@ export default function Hero() {
                 >
                   <Linkedin size={20} />
                 </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.2, y: -3 }}
-                  whileTap={{ scale: 0.9 }}
-                  href={SOCIALS.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 bg-slate-100 dark:bg-white/10 backdrop-blur-md text-slate-700 dark:text-slate-200 rounded-full hover:bg-pink-500 hover:text-white dark:hover:bg-pink-500 transition-all shadow-sm"
-                >
-                  <Instagram size={20} />
-                </motion.a>
+                
               </div>
             </div>
           </motion.div>

@@ -102,10 +102,7 @@ export default function Contact() {
                   className="w-11 h-11 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-200 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
                   <Linkedin size={18} />
                 </motion.a>
-                <motion.a whileHover={{ scale: 1.15, y: -3 }} href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
-                  className="w-11 h-11 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-200 rounded-xl flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all">
-                  <Instagram size={18} />
-                </motion.a>
+                
               </div>
             </div>
           </motion.div>
