@@ -1,37 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Background circle -->
-  <circle cx="32" cy="32" r="30" fill="#000000"/>
-  
-  <!-- Outer ring -->
-  <circle cx="32" cy="32" r="28" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.6"/>
-  
-  <!-- Inner glow ring -->
-  <circle cx="32" cy="32" r="22" stroke="#06b6d4" stroke-width="1" opacity="0.3"/>
-  
-  <!-- Gradient definition -->
   <defs>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  
-  <!-- "S" letter - centered, bold -->
-  <text 
-    x="32" 
-    y="43" 
-    font-family="Arial, Helvetica, sans-serif" 
-    font-size="30" 
-    font-weight="900" 
-    text-anchor="middle" 
-    fill="url(#textGrad)"
-    filter="url(#glow)"
-  >S</text>
+
+  <!-- Laptop base / keyboard -->
+  <rect x="8" y="42" width="48" height="6" rx="3" fill="#06b6d4" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- Laptop screen body -->
+  <rect x="13" y="14" width="38" height="28" rx="3" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+
+  <!-- Screen inner (display) -->
+  <rect x="16" y="17" width="32" height="22" rx="1.5" fill="#0a0a1a"/>
+
+  <!-- Code lines on screen -->
+  <rect x="19" y="21" width="10" height="2" rx="1" fill="#06b6d4" opacity="0.9" filter="url(#glow)"/>
+  <rect x="19" y="25" width="16" height="2" rx="1" fill="#6366f1" opacity="0.8"/>
+  <rect x="19" y="29" width="12" height="2" rx="1" fill="#06b6d4" opacity="0.6"/>
+  <rect x="19" y="33" width="8" height="2" rx="1" fill="#6366f1" opacity="0.5"/>
+
+  <!-- Cursor blink -->
+  <rect x="32" y="33" width="2" height="2" rx="0.5" fill="#06b6d4" filter="url(#glow)"/>
+
+  <!-- Hinge line -->
+  <line x1="13" y1="42" x2="51" y2="42" stroke="#06b6d4" stroke-width="1" opacity="0.4"/>
 </svg>
