@@ -95,13 +95,13 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-                <a
+                {/* <a
                   href={project.live}
                   className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300 transition-colors text-sm mt-auto group/link"
                 >
                   <span>View Details</span>
                   <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                </a>
+                </a> */}
               </div>
             </motion.div>
           ))}
