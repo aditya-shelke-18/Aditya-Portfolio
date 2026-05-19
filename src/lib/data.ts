@@ -21,9 +21,8 @@ export const PERSONAL = {
 
 // ─── SOCIAL LINKS ─────────────────────────────────────────────
 export const SOCIALS = {
-  github: "https://github.com/adityashelke",
-  linkedin: "https://linkedin.com/in/aditya-shelke",
-  instagram: "https://www.instagram.com",
+  github: "https://github.com/aditya-shelke-18",
+  linkedin: "https://www.linkedin.com/in/aditya-shelke-133256272/"
 };
 
 // ─── TYPEWRITER TITLES (Hero) ─────────────────────────────────
@@ -153,7 +152,7 @@ export const PROJECTS = [
     description:
       "Real-time chat app with JWT authentication, instant messaging, online user status, image sharing, and emoji reactions.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO"],
-    github: SOCIALS.github,
+    github: 'https://github.com/aditya-shelke-18/chatapp',
     live: "#",
     image: "/images/projects/ChatApp.webp",
     gradient: "from-blue-500 to-cyan-500",
@@ -164,7 +163,7 @@ export const PROJECTS = [
     description:
       "IoT-based smart agriculture solution for crop monitoring and disease detection with KNN-based prediction models and real-time analytics dashboard.",
     tech: ["Next.js", "Flask", "Machine Learning", "IoT Sensors"],
-    github: SOCIALS.github,
+    github: "",
     live: "#",
     image: "/images/projects/SAS.jpg",
     gradient: "from-emerald-500 to-teal-500",
