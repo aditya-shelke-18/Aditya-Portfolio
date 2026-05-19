@@ -62,15 +62,17 @@ export default function Portfolio() {
                   >
                     <Github size={20} />
                   </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.1 }}
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white text-slate-900 rounded-full hover:bg-primary-500 hover:text-white transition-all shadow-lg translate-y-6 group-hover:translate-y-0 duration-300 delay-75"
-                  >
-                    <ExternalLink size={20} />
-                  </motion.a>
+                  {project.live && project.live !== "#" && (
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white text-slate-900 rounded-full hover:bg-primary-500 hover:text-white transition-all shadow-lg translate-y-6 group-hover:translate-y-0 duration-300 delay-75"
+                    >
+                      <ExternalLink size={20} />
+                    </motion.a>
+                  )}
                 </div>
               </div>
 
@@ -95,13 +97,18 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-                {/* <a
-                  href={project.live}
-                  className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300 transition-colors text-sm mt-auto group/link"
-                >
-                  <span>View Details</span>
-                  <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                </a> */}
+                {/* View Details button — only shown when live URL is real */}
+                {project.live && project.live !== "#" && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 font-semibold hover:text-primary-700 dark:hover:text-primary-300 transition-colors text-sm mt-auto group/link"
+                  >
+                    <span>View Live</span>
+                    <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
