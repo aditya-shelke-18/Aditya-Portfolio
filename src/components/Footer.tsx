@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Instagram, Heart, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Heart, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { PERSONAL, SOCIALS } from "@/lib/data";
 
@@ -54,10 +54,7 @@ export default function Footer() {
                 className="w-10 h-10 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-200 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
                 <Linkedin size={18} />
               </motion.a>
-              <motion.a whileHover={{ scale: 1.15, y: -3 }} href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-200 rounded-xl flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all">
-                <Instagram size={18} />
-              </motion.a>
+
             </div>
           </div>
 
