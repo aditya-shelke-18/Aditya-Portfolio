@@ -121,11 +121,7 @@ export default function Hero() {
               <div className="absolute inset-4 bg-gradient-to-tr from-primary-500/30 via-cyan-400/20 to-transparent rounded-full blur-3xl" />
 
               {/* Floating Image Container */}
-              <motion.div
-                animate={{ y: [0, -18, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full h-full"
-              >
+              <div className="relative w-full h-full animate-float">
                 <div className="relative w-full h-full rounded-full border-4 border-white dark:border-white/20 shadow-2xl shadow-primary-500/20 dark:shadow-primary-500/30 overflow-hidden bg-slate-100 dark:bg-black glow-primary">
                   <Image
                     src={PERSONAL.heroImage}
@@ -134,9 +130,10 @@ export default function Hero() {
                     sizes="(max-width: 768px) 256px, 420px"
                     className="object-cover"
                     priority
+                    fetchPriority="high"
                   />
                 </div>
-              </motion.div>
+              </div>
 
               {/* Decorative floating badges */}
               <motion.div
