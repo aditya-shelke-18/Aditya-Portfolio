@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle, type LucideIcon } from "lucide-react";
+import { PERSONAL, SOCIALS, CONTACT_INFO } from "@/lib/data";
+
+const ICON_MAP: Record<string, LucideIcon> = { Phone, Mail, MapPin };
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -18,29 +21,7 @@ export default function Contact() {
     }, 3000);
   };
 
-  const contactInfo = [
-    {
-      icon: <Phone size={22} />,
-      title: "Call Me",
-      value: "+91 7499836847",
-      href: "tel:+917499836847",
-      color: "bg-emerald-500/10 dark:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 dark:border-emerald-400/20",
-    },
-    {
-      icon: <Mail size={22} />,
-      title: "Email",
-      value: "adityasshelke02@gmail.com",
-      href: "mailto:adityasshelke02@gmail.com",
-      color: "bg-primary-500/10 dark:bg-primary-400/10 text-primary-600 dark:text-primary-400 border-primary-500/20 dark:border-primary-400/20",
-    },
-    {
-      icon: <MapPin size={22} />,
-      title: "Location",
-      value: "Mumbai, Maharashtra",
-      href: "#",
-      color: "bg-rose-500/10 dark:bg-rose-400/10 text-rose-600 dark:text-rose-400 border-rose-500/20 dark:border-rose-400/20",
-    },
-  ];
+
 
   return (
     <section id="contact" className="py-24 bg-transparent relative z-10">
@@ -72,7 +53,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1 flex flex-col gap-5"
           >
-            {contactInfo.map((info, index) => (
+            {CONTACT_INFO.map((info, index) => {
+              const Icon = ICON_MAP[info.iconKey];
+              return (
               <motion.a
                 whileHover={{ scale: 1.02, x: 6 }}
                 transition={{ duration: 0.25 }}
@@ -81,24 +64,25 @@ export default function Contact() {
                 className="flex items-center space-x-4 p-5 bg-white/80 dark:bg-white/[0.04] backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-white/10 hover:border-primary-500/40 dark:hover:border-primary-400/30 shadow-sm hover:shadow-lg transition-all group"
               >
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 border ${info.color}`}>
-                  {info.icon}
+                  <Icon size={22} />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-400 mb-0.5">{info.title}</p>
                   <p className="text-slate-800 dark:text-slate-200 font-semibold text-sm break-all">{info.value}</p>
                 </div>
               </motion.a>
-            ))}
+            );
+            })}
 
             {/* Social Links */}
             <div className="p-5 bg-white/80 dark:bg-white/[0.04] backdrop-blur-md rounded-2xl border border-slate-200/60 dark:border-white/10">
               <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-400 mb-4">Follow Me</h4>
               <div className="flex space-x-3">
-                <motion.a whileHover={{ scale: 1.15, y: -3 }} href="https://github.com/adityashelke" target="_blank" rel="noopener noreferrer"
+                <motion.a whileHover={{ scale: 1.15, y: -3 }} href={SOCIALS.github} target="_blank" rel="noopener noreferrer"
                   className="w-11 h-11 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-200 rounded-xl flex items-center justify-center hover:bg-slate-800 hover:text-white dark:hover:bg-slate-700 transition-all">
                   <Github size={18} />
                 </motion.a>
-                <motion.a whileHover={{ scale: 1.15, y: -3 }} href="https://linkedin.com/in/aditya-shelke" target="_blank" rel="noopener noreferrer"
+                <motion.a whileHover={{ scale: 1.15, y: -3 }} href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer"
                   className="w-11 h-11 bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-200 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
                   <Linkedin size={18} />
                 </motion.a>
