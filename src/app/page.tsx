@@ -1,49 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import ExperienceEducation from "@/components/ExperienceEducation";
-import Portfolio from "@/components/Portfolio";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import LoadingScreen from "@/components/LoadingScreen";
-import ScrollToTop from "@/components/ScrollToTop";
-import CustomCursor from "@/components/CustomCursor";
+
+const About = lazy(() => import("@/components/About"));
+const ExperienceEducation = lazy(() => import("@/components/ExperienceEducation"));
+const Portfolio = lazy(() => import("@/components/Portfolio"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+const LoadingScreen = lazy(() => import("@/components/LoadingScreen"));
+const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
+const CustomCursor = lazy(() => import("@/components/CustomCursor"));
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Minimum 2 seconds loading time so animation can play
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2200);
+    setIsMounted(true);
+    const timer = setTimeout(() => setIsLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {/* Custom Cursor */}
-      <CustomCursor />
+      {isMounted && (
+        <Suspense fallback={null}>
+          <CustomCursor />
+        </Suspense>
+      )}
 
-      {/* Loading Screen (shown on first visit) */}
-      {isLoading && <LoadingScreen />}
+      {isLoading && (
+        <Suspense fallback={null}>
+          <LoadingScreen />
+        </Suspense>
+      )}
 
-      {/* Main App */}
       <main className="flex min-h-screen flex-col">
         <Header />
         <Hero />
-        <About />
-        <ExperienceEducation />
-        <Portfolio />
-        <Contact />
-        <Footer />
+        <Suspense fallback={<div className="py-24" />}>
+          <About />
+          <ExperienceEducation />
+          <Portfolio />
+          <Contact />
+          <Footer />
+        </Suspense>
       </main>
 
-      {/* Global Scroll To Top — appears on About, Portfolio, Contact pages */}
-      <ScrollToTop />
+      {isMounted && (
+        <Suspense fallback={null}>
+          <ScrollToTop />
+        </Suspense>
+      )}
     </>
   );
 }

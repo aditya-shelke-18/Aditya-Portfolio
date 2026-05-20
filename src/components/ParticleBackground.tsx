@@ -24,16 +24,14 @@ export default function ParticleBackground() {
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    // Track Mouse
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY }
     }
     window.addEventListener('mousemove', handleMouseMove)
 
-    // Configuration
-    const particleCount = isMobile ? (isLowEnd ? 30 : 50) : 100
-    const connectionDistance = isMobile ? 80 : 120
-    const mouseRadius = 150
+    const particleCount = isMobile ? 20 : (isLowEnd ? 40 : 60)
+    const connectionDistance = isMobile ? 60 : 100
+    const mouseRadius = 120
 
     class Particle {
       x: number
