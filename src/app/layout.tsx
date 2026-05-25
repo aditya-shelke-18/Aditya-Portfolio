@@ -89,12 +89,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+
         <link
           rel="preload"
           as="image"
           href="/images/projects/Aditya.jpeg"
           fetchPriority="high"
         />
+<script
+  src="https://knowledge-ai-rag-chatbot.vercel.app/chatbot-widget.js"
+  data-api-key="y6tymbev0afjcn4fxar5nl3jxkdvlkpdgdyy29mimgo6qqyr"
+  data-base-url="https://knowledge-ai-rag-chatbot.vercel.app"
+  async
+></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased min-h-screen bg-slate-50 dark:bg-black text-slate-900 dark:text-slate-50 transition-colors duration-300 relative`}
