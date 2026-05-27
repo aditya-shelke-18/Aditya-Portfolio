@@ -153,7 +153,7 @@ export const PROJECTS = [
       "Real-time chat app with JWT authentication, instant messaging, online user status, image sharing, and emoji reactions.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO"],
     github: 'https://github.com/aditya-shelke-18/chatapp',
-    live: "#",
+    live: "https://talkify-woad.vercel.app",
     image: "/images/projects/ChatApp.webp",
     gradient: "from-blue-500 to-cyan-500",
   },
