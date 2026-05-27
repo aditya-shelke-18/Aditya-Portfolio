@@ -105,7 +105,7 @@ export default function RootLayout({
 ></script>
 <style>{`
           #chatbot-widget, [id*='chatbot'], [class*='chatbot'], [id*='widget'], [class*='widget'] {
-            bottom: 80px !important;
+            bottom: 100px !important;
           }
         `}</style>
       </head>
