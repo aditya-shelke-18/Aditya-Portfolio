@@ -90,7 +90,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
 
-        <link
+      <link
           rel="preload"
           as="image"
           href="/images/projects/Aditya.jpeg"
@@ -106,7 +106,7 @@ export default function RootLayout({
 <style>{`
           #chatbot-widget, [id*='chatbot'], [class*='chatbot'], [id*='widget'], [class*='widget'] {
             bottom: 100px !important,
-            right: 20px !important;
+            right: 5px ;
           }
         `}</style>
       </head>

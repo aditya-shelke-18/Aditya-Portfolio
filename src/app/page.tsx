@@ -49,11 +49,11 @@ export default function Home() {
         </Suspense>
       </main>
 
-      {isMounted && (
+      {/* {isMounted && (
         <Suspense fallback={null}>
           <ScrollToTop />
         </Suspense>
-      )}
+      )} */}
     </>
   );
 }
