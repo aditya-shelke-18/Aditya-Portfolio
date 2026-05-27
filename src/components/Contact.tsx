@@ -10,15 +10,31 @@ const ICON_MAP: Record<string, LucideIcon> = { Phone, Mail, MapPin };
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 3000);
+    setLoading(true);
+    setError("");
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: "", email: "", message: "" });
+      }, 3000);
+    } else {
+      setError("Failed to send message. Please try again.");
+    }
   };
 
 
@@ -147,11 +163,15 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <p className="text-red-500 text-sm mb-4">{error}</p>
+              )}
+
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                disabled={submitted}
+                disabled={submitted || loading}
                 suppressHydrationWarning
                 className={`w-full md:w-auto px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg ${submitted
                   ? "bg-emerald-500 shadow-emerald-500/30 text-white"
@@ -163,6 +183,8 @@ export default function Contact() {
                     <CheckCircle size={18} />
                     <span>Message Sent!</span>
                   </>
+                ) : loading ? (
+                  <span>Sending...</span>
                 ) : (
                   <>
                     <span>Send Message</span>
