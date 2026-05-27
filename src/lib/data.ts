@@ -136,10 +136,10 @@ export const EDUCATIONS = [
 // ─── PROJECTS ────────────────────────────────────────────────
 export const PROJECTS = [
   {
-    title: "AI Knowledge Base Chatbot",
+    title: "AI RAG Base Chatbot Generator",
     category: "Full Stack",
     description:
-      "AI-powered chatbot with real-time conversational capabilities and secure knowledge-restricted responses for customer support.",
+      "AI-powered chatbot Generator with real-time conversational capabilities and secure knowledge-restricted responses for customer support.",
     tech: ["Next.js", "Vercel AI SDK", "PostgreSQL", "Drizzle ORM", "OpenAI API"],
     github: SOCIALS.github,
     live: "https://knowledge-ai-rag-chatbot.vercel.app/",
